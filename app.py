@@ -34,7 +34,7 @@ class APP(object):
         driver.get(self.URL)
 
         # ロード完了後まで5秒待つ
-        sleep(5)
+        driver.implicitly_wait(10)
 
         # ユーザーネームの入力
         element = driver.find_element_by_css_selector(self.ID_INPUT)
@@ -62,7 +62,7 @@ class APP(object):
         element.click()
 
         for i in range(10):
-            sleep(2)
+            driver.implicitly_wait(10)
             # 申込ボタンを探索
             element = None
             try:
@@ -114,7 +114,7 @@ class APP(object):
         element.click()
 
         for i in range(10):
-            sleep(2)
+            driver.implicitly_wait(10)
             # 参加ボタンを探索
             element = None
             try:
@@ -142,3 +142,7 @@ class APP(object):
 
             # 確認ボタンを押下
             driver.find_element_by_css_selector('input[value="　　確　認　　"]').click()
+
+            # 新規上場株式ブックビルディング / 購入意思表示画面へ戻る を押下
+            driver.find_element_by_css_selector('body > table > tbody > tr > td > table:nth-child(1) > tbody > tr > td\
+                 > table:nth-child(3) > tbody > tr > td > table:nth-child(9) > tbody > tr > td > a').click()

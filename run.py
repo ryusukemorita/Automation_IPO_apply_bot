@@ -6,7 +6,7 @@ from config import MONEX_INFO as mnx
 
 # SBI証券のIPO申請プロセスを実行するコマンド
 sbi_app = APP(sbi.url, sbi.login_id, sbi.password, sbi.css_selector_id_input, sbi.css_selector_password_input, sbi.css_selector_login_button, sbi.ipo_url, sbi.torihiki_password)
-#sbi_app.login()
+sbi_app.SBI_IPO_APPLY()
 
 
 # 楽天証券のIPO申請プロセスを実行するコマンド
